@@ -1,0 +1,4 @@
+{
+  "entities": ["player"],
+  "slots": ["ai_encounters_charm"]
+}

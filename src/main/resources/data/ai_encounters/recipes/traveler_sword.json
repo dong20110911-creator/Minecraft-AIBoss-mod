@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["CIR", "CI ", "LS "],
+  "key": {
+    "C": {"item": "minecraft:copper_ingot"},
+    "I": {"item": "minecraft:iron_ingot"},
+    "R": {"item": "minecraft:redstone"},
+    "L": {"item": "minecraft:leather"},
+    "S": {"item": "minecraft:stick"}
+  },
+  "result": {"item": "ai_encounters:traveler_sword"}
+}

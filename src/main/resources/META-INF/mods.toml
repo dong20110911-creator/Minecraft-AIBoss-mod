@@ -1,0 +1,39 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="All Rights Reserved"
+
+[[mods]]
+modId="ai_encounters"
+version="${mod_version}"
+displayName="Invoker: Protocol Rift"
+description='''
+Five AI-persona boss encounters for survival players. M0 skeleton: one item, one test entity, one Curios slot.
+'''
+
+[[dependencies.ai_encounters]]
+modId="forge"
+mandatory=true
+versionRange="${forge_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ai_encounters]]
+modId="minecraft"
+mandatory=true
+versionRange="[${minecraft_version}]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ai_encounters]]
+modId="geckolib"
+mandatory=true
+versionRange="${geckolib_version_range}"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.ai_encounters]]
+modId="curios"
+mandatory=true
+versionRange="${curios_version_range}"
+ordering="AFTER"
+side="BOTH"
