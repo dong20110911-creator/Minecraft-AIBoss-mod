@@ -1,4 +1,4 @@
-# CURRENT_TASK — M0-01
+# CURRENT_TASK — M0-01 (build/tests/server/client checks done; see PROGRESS.md for open items)
 
 **Goal:** minimal Forge 1.20.1 project that builds and starts.
 **Scope:** Gradle/Forge project, `VERSION_LOCK.md`, one item (`traveler_sword`), one test entity (`test_dummy`) with a GeckoLib idle animation, one Curios slot (`ai_encounters_charm`).
