@@ -24,6 +24,9 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            // Curios ships mixins referencing SRG names; remap them in the dev environment
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             mods {
                 ai_encounters {
                     source sourceSets.main
@@ -31,6 +34,13 @@ minecraft {
             }
         }
         client {
+            property 'forge.enabledGameTestNamespaces', 'ai_encounters'
+            // ./gradlew runClient -Pquickplay=<save folder name> joins that singleplayer world directly
+            if (project.hasProperty('quickplay')) {
+                args '--quickPlaySingleplayer', project.property('quickplay'), '--width', '854', '--height', '480'
+            }
+        }
+        gameTestServer {
             property 'forge.enabledGameTestNamespaces', 'ai_encounters'
         }
         server {
@@ -90,4 +100,9 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+// Forward stdin so scripts can send "stop" to the dev dedicated server
+tasks.withType(JavaExec).configureEach {
+    standardInput = System.in
 }
